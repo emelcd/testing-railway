@@ -1,0 +1,11 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVjb0BlY28uY29tIiwiaWF0IjoxNjU1MzMwMjU4LCJleHAiOjE2NTU1ODk0NTh9.G8vEnqT9UOTzwJbthmfamnsxF8pYrZ-ALQBmI3LVSIc
+
+### Create question
+POST http://localhost:3000/api/question/62aa55f4fd012f43b0a6bc06
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "question": "What is the best way to learn Ruby?",
+  "answer": "I recommend watching videos on YouTube"
+}

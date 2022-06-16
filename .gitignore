@@ -10,7 +10,7 @@
 
 # production
 /build
-
+/super
 # misc
 .DS_Store
 *.pem

@@ -1,0 +1,41 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVjb0BlY28uY29tIiwiaWF0IjoxNjU1MzM1NDI4LCJleHAiOjE2NTU1OTQ2Mjh9.0WsA3CerGR5xxszej9I25mI9kaCnFhYUiAWMSwsuun0
+
+### Create a set
+POST http://localhost:3000/api/set
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Conocimiento de Incendios pero sin embargo es mas largo que el nombre de la serie de TV",
+  "description": "This is my set",
+  "isPublic": true
+}
+
+### Get sets
+GET http://localhost:3000/api/set
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### Update a set
+PUT http://localhost:3000/api/set
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "62a9c6d9875bc14bb76bd929",
+  "name": "My Set Updated",
+  "description": "This is my set"
+}
+
+### Delete a set
+DELETE http://localhost:3000/api/set
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "62aa6a37bd5d91c6a3bac71a"
+}
+
+### Get the public set
+GET http://localhost:3000/api/set/public
+Content-Type: application/json

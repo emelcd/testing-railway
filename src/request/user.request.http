@@ -1,0 +1,19 @@
+@host = localhost:3000
+
+### User register
+POST http://{{host}}/api/user/register
+Content-Type: application/json
+
+{
+  "password": "test-12",
+  "email": "eco@eco.com"
+}
+
+### User login
+POST http://{{host}}/api/user/login
+Content-Type: application/json
+
+{
+  "email": "eco@eco.com",
+  "password": "test-12"
+}
