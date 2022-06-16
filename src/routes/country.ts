@@ -5,13 +5,30 @@ const routes = Router();
 
 routes.get("/", async (req, res) => {
   try {
-    const countries: ICountry[] = await CountryModel.find().exec();
+    const countries: ICountry[] = await CountryModel.find(
+      {},
+      { __v: 0 }
+    ).exec();
     return res.json(countries);
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Sorry, something went wrong :/" });
   }
 });
+
+routes.get("/:id", async (req, res) => {
+  try {
+    const country = await CountryModel.findById(
+      req.params.id,
+      { __v: 0 }
+    ).exec();
+    if(!country) throw new Error("Country not found");
+    return res.json(country);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Sorry, something went wrong :/" });
+  }
+})
 
 routes.post("/", async (req, res) => {
   try {
