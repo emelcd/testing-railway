@@ -1,5 +1,5 @@
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVjb0BlY28uY29tIiwiaWF0IjoxNjU1NDIzMzM1LCJleHAiOjE2NTU2ODI1MzV9.BnwLYm6GakywrS2N3DGNziF_mhf4cgJ1H44oRfTCEwk 
-@host = http://localhost:3000
+@host = https://expressjs-mongoose-production-87c8.up.railway.app
 @set = 62abc1e4e21b8d8b8ae02b69
 @id = 62abcf01c3f54d029b0367cb
 ### Create question

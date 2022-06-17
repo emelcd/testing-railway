@@ -1,5 +1,6 @@
 
-@host = http://localhost:3000
+@host = https://expressjs-mongoose-production-87c8.up.railway.app
+
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVjb0BlY28uY29tIiwiaWF0IjoxNjU1NDIzMzM1LCJleHAiOjE2NTU2ODI1MzV9.BnwLYm6GakywrS2N3DGNziF_mhf4cgJ1H44oRfTCEwk 
 
 ### Create a set
@@ -19,7 +20,7 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 ### Update a set
-PUT {{host}}/api/set/62abcc54742137e69132e070
+PUT {{host}}/api/set/62aba4a0c89c8022f5a8376d
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
@@ -29,7 +30,7 @@ Authorization: Bearer {{token}}
 }
 
 ### Delete a set
-DELETE {{host}}/api/set/62abcc54742137e69132e070
+DELETE {{host}}/api/set/62aba4a0c89c8022f5a8376d
 Content-Type: application/json
 Authorization: Bearer {{token}}
 

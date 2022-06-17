@@ -27,7 +27,7 @@ class QuestionService {
     set: string,
     id: string,
     owner: string
-  ): Promise<IQuestion> {
+  ): Promise<{ msg: string }> {
     const user = await UserModel.findOne({ email: owner })
     if (!user) throw new ApiError('User not found', 404)
     const setM = await SetModel.find({ _id: set, owner: user._id })
@@ -41,7 +41,8 @@ class QuestionService {
       { new: true }
     )
     if (!questionM) throw new ApiError('Question not found', 404)
-    return await questionM.save()
+    await questionM.save()
+    return { msg: 'Question updated' }
   }
 
   public static async delete (
@@ -60,7 +61,7 @@ class QuestionService {
       owner: user._id
     })
     if (!questionM) throw new ApiError('Question not found', 404)
-    setM.questions.filter(question => question !== questionM._id)
+    setM.questions.filter((question) => question !== questionM._id)
     await setM.save()
     return { msg: 'Question deleted' }
   }

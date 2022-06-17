@@ -40,7 +40,9 @@ export class SetService {
     id: string,
     set: ISet,
     owner: string
-  ): Promise<ISet> {
+  ): Promise<{
+    msg: string;
+  }> {
     const user = await UserModel.findOne({ email: owner })
     if (!user) throw new ApiError('User not found', 404)
     const updatedSet = await SetModel.findOneAndUpdate(
@@ -48,7 +50,8 @@ export class SetService {
       set
     )
     if (!updatedSet) throw new ApiError('Set not found', 404)
-    return updatedSet
+    await updatedSet.save()
+    return { msg: 'Set updated' }
   }
 
   public static async getPublicSets (): Promise<ISet[]> {
