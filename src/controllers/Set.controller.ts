@@ -25,7 +25,7 @@ class SetController {
 
   public static async delete (req: Request, res: Response): Promise<Response> {
     try {
-      const set = await SetService.delete(req.body.id, req.body.email)
+      const set = await SetService.delete(req.params.id, req.body.email)
       return res.json(set)
     } catch (error) {
       return ApiErrorHandler(error, res)
@@ -35,7 +35,7 @@ class SetController {
   public static async update (req: Request, res: Response): Promise<Response> {
     try {
       const set = await SetService.update(
-        req.body.id,
+        req.params.id,
         req.body,
         req.body.email
       )

@@ -6,8 +6,8 @@ const setRouter = Router()
 
 setRouter.get('/', jwtMiddleware, SetController.getAll)
 setRouter.post('/', jwtMiddleware, SetController.create)
-setRouter.delete('/', jwtMiddleware, SetController.delete)
-setRouter.put('/', jwtMiddleware, SetController.update)
+setRouter.delete('/:id', jwtMiddleware, SetController.delete)
+setRouter.put('/:id', jwtMiddleware, SetController.update)
 setRouter.get('/public', SetController.getPublicSets)
 
 export default setRouter

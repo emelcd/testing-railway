@@ -14,8 +14,6 @@ app.use(morgan('dev'))
 app.use(helmet())
 
 app.use('/api', apiRouter)
-app.use('/', (req, res) => {
-  res.send(listEndpoints(app))
-})
+app.get('/', (req, res) => res.send(listEndpoints(app)))
 
 export default app

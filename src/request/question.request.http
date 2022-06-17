@@ -1,6 +1,7 @@
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVjb0BlY28uY29tIiwiaWF0IjoxNjU1NDIzMzM1LCJleHAiOjE2NTU2ODI1MzV9.BnwLYm6GakywrS2N3DGNziF_mhf4cgJ1H44oRfTCEwk 
 @host = http://localhost:3000
 @set = 62abc1e4e21b8d8b8ae02b69
+@id = 62abcf01c3f54d029b0367cb
 ### Create question
 POST {{host}}/api/question/{{set}}
 Content-Type: application/json
@@ -12,18 +13,17 @@ Authorization: Bearer {{token}}
 }
 
 ### Update question
-PUT {{host}}/api/question/{{set}}
+PUT {{host}}/api/question/{{set}}/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "_id":"62abc2b207a445dda888a99a",
   "question": "What is the best way to learn Ruby?",
   "answer": "I recommend watching videos on YouTube",
   "type": "multiple_choice"
 }
 
 ### Delete question
-DELETE {{host}}/api/question/{{set}}/62abc4185b0b065eff6eb44c
+DELETE {{host}}/api/question/{{set}}/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{token}}

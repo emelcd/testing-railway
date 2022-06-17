@@ -22,6 +22,7 @@ class QuestionController {
       const question = await QuestionService.update(
         req.body,
         req.params.set,
+        req.params.id,
         req.body.email
       )
       return res.status(200).json(question)

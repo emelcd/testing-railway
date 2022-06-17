@@ -19,18 +19,17 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 ### Update a set
-PUT {{host}}/api/set
+PUT {{host}}/api/set/62abcc54742137e69132e070
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "id": "62abc1a4e21b8d8b8ae02b5e",
   "name": "My Set Updated",
   "description": "This is my set"
 }
 
 ### Delete a set
-DELETE {{host}}/api/set
+DELETE {{host}}/api/set/62abcc54742137e69132e070
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
