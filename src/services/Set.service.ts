@@ -12,6 +12,17 @@ export class SetService {
     )
   }
 
+  public static async getById (id: string, owner: string): Promise<ISet> {
+    const user = await UserModel.findOne({ email: owner })
+    if (!user) throw new ApiError('User not found', 404)
+    const set = await SetModel.findOne({ _id: id, owner: user._id }).populate(
+      'questions',
+      'question answer'
+    )
+    if (!set) throw new ApiError('Set not found', 404)
+    return set
+  }
+
   public static async create (set: ISet, owner: string): Promise<ISet> {
     const user = await UserModel.findOne({ email: owner })
     if (!user) throw new ApiError('User not found', 404)

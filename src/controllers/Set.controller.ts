@@ -14,6 +14,15 @@ class SetController {
     }
   }
 
+  public static async getById (req: Request, res: Response): Promise<Response> {
+    try {
+      const set = await SetService.getById(req.params.id, req.body.email)
+      return res.json(set)
+    } catch (error) {
+      return ApiErrorHandler(error, res)
+    }
+  }
+
   public static async create (req: Request, res: Response): Promise<Response> {
     try {
       const set = await SetService.create({ ...req.body }, req.body.email)
