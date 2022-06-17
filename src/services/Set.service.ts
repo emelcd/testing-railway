@@ -20,6 +20,7 @@ export class SetService {
       'question answer'
     )
     if (!set) throw new ApiError('Set not found', 404)
+    console.log(set)
     return set
   }
 
