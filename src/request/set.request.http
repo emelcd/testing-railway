@@ -1,34 +1,36 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVjb0BlY28uY29tIiwiaWF0IjoxNjU1MzM1NDI4LCJleHAiOjE2NTU1OTQ2Mjh9.0WsA3CerGR5xxszej9I25mI9kaCnFhYUiAWMSwsuun0
+
+@host = http://localhost:3000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVjb0BlY28uY29tIiwiaWF0IjoxNjU1NDIzMzM1LCJleHAiOjE2NTU2ODI1MzV9.BnwLYm6GakywrS2N3DGNziF_mhf4cgJ1H44oRfTCEwk 
 
 ### Create a set
-POST http://localhost:3000/api/set
+POST {{host}}/api/set
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "name": "Conocimiento de Incendios pero sin embargo es mas largo que el nombre de la serie de TV",
+  "name": "Conocimiento de Incendios",
   "description": "This is my set",
   "isPublic": true
 }
 
 ### Get sets
-GET http://localhost:3000/api/set
+GET {{host}}/api/set
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 ### Update a set
-PUT http://localhost:3000/api/set
+PUT {{host}}/api/set
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "id": "62a9c6d9875bc14bb76bd929",
+  "id": "62abc1a4e21b8d8b8ae02b5e",
   "name": "My Set Updated",
   "description": "This is my set"
 }
 
 ### Delete a set
-DELETE http://localhost:3000/api/set
+DELETE {{host}}/api/set
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
@@ -37,5 +39,5 @@ Authorization: Bearer {{token}}
 }
 
 ### Get the public set
-GET http://localhost:3000/api/set/public
+GET {{host}}/api/set/public
 Content-Type: application/json

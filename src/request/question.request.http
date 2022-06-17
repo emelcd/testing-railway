@@ -1,7 +1,8 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVjb0BlY28uY29tIiwiaWF0IjoxNjU1MzMwMjU4LCJleHAiOjE2NTU1ODk0NTh9.G8vEnqT9UOTzwJbthmfamnsxF8pYrZ-ALQBmI3LVSIc
-
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVjb0BlY28uY29tIiwiaWF0IjoxNjU1NDIzMzM1LCJleHAiOjE2NTU2ODI1MzV9.BnwLYm6GakywrS2N3DGNziF_mhf4cgJ1H44oRfTCEwk 
+@host = http://localhost:3000
+@set = 62abc1e4e21b8d8b8ae02b69
 ### Create question
-POST http://localhost:3000/api/question/62aa55f4fd012f43b0a6bc06
+POST {{host}}/api/question/{{set}}
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
@@ -9,3 +10,20 @@ Authorization: Bearer {{token}}
   "question": "What is the best way to learn Ruby?",
   "answer": "I recommend watching videos on YouTube"
 }
+
+### Update question
+PUT {{host}}/api/question/{{set}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "_id":"62abc2b207a445dda888a99a",
+  "question": "What is the best way to learn Ruby?",
+  "answer": "I recommend watching videos on YouTube",
+  "type": "multiple_choice"
+}
+
+### Delete question
+DELETE {{host}}/api/question/{{set}}/62abc4185b0b065eff6eb44c
+Content-Type: application/json
+Authorization: Bearer {{token}}
